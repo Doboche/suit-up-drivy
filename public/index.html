@@ -1,33 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+<head>
+<title>Drivy rental form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="index.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- //Custom Theme files -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<div id="title">
+		<h1>Drivy rental form</h1>
+	</div>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<div id="car">
+					<input class="model" type="text" placeholder="Car model" required="">
+					<input class="price-by-day" type="number" placeholder="Price by day" required="">
+					<input class="price-by-km" type="number" placeholder="Price by km" required="">
+					</div>
+					<div id="rental">
+					<input class="begin" type="date" placeholder="Rental begin date" required="">
+					<div id="begin">
+						Rental begin date
+					</div>
+					<input class="end" type="date" placeholder="Rental end date" required="">
+					<div id="end">
+						Rental end date
+					</div>
+					<input class="distance" type="number"placeholder="Distance in km" required="">
+  				<input  id="check"type="checkbox" class="option" placeholder="deductible option">
+					<label for="check" style ="color: white;">Option</label>
+							</div>
+					<div class="wthree-text">
+						<div class="clear"> </div>
+					</div>
+					<button id="compute" type="button" class="btn btn-primary btn-lg btn-block">Compute</button>
+					<div id="actors"></div>
+			</div>
+		</div>
+		<script id="template" type="x-tmpl-mustache">
+		<div id="res">
+		Result :
+		</div>
+			{{#actors}}
+				<div class="actor">
+					<span>{{who}}</span>
+					<span>{{type}}</span>
+					<span>{{amount}}</span>
+				</div>
+			{{/actors}}
+		</script>
+		<!-- copyright -->
+		<div class="w3copyright-agile">
+			<p>© 2017 Magical Login Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+		</div>
+		<!-- //copyright -->
+
+	</div>
+	<!-- //main -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
